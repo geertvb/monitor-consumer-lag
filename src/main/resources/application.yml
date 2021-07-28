@@ -1,0 +1,22 @@
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-default: true
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    client-id: optimize
+    admin:
+      client-id: test
+      fail-fast: true
+    consumer:
+      group-id: flashback-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
